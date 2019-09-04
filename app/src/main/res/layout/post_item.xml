@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/story_ImageUser"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_story_image"
+        android:paddingHorizontal="@dimen/sp3dp"
+        android:src="@drawable/khabanh"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/post_txtUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        android:textColor="#000"
+        android:textSize="@dimen/sp13dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/story_ImageUser"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <ImageView
+        android:id="@+id/post_Option"
+        android:layout_width="48dp"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toBottomOf="@+id/post_txtUserName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/post_txtUserName"
+        app:srcCompat="@drawable/more" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/post_Option"
+        app:layout_constraintStart_toStartOf="@+id/story_ImageUser"
+        app:layout_constraintTop_toBottomOf="@+id/post_Option">
+
+        <ImageView
+            android:id="@+id/post_Image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/hinh1" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/post_Like"
+        android:layout_width="43dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/like" />
+
+    <ImageView
+        android:id="@+id/post_comment"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
+        app:layout_constraintBottom_toBottomOf="@+id/post_Like"
+        app:layout_constraintStart_toEndOf="@+id/post_Like"
+        app:layout_constraintTop_toTopOf="@+id/post_Like"
+        app:srcCompat="@drawable/comment" />
+
+    <ImageView
+        android:id="@+id/post_Direct"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        app:layout_constraintBottom_toBottomOf="@+id/post_comment"
+        app:layout_constraintStart_toEndOf="@+id/post_comment"
+        app:layout_constraintTop_toTopOf="@+id/post_comment"
+        app:srcCompat="@drawable/directmini" />
+
+    <ImageView
+        android:id="@+id/post_SaveFlag"
+        android:layout_width="53dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/post_Direct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/post_Direct"
+        app:layout_constraintTop_toTopOf="@+id/post_Direct"
+        app:layout_constraintVertical_bias="0.629"
+        app:srcCompat="@drawable/saveflag" />
+
+    <TextView
+        android:id="@+id/post_txtLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp"
+        android:text="Like"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/post_Like"
+        app:layout_constraintTop_toBottomOf="@+id/post_Like" />
+
+    <TextView
+        android:id="@+id/post_txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="@+id/post_txtLike"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/post_txtLike"
+        app:layout_constraintTop_toBottomOf="@+id/post_txtLike" />
+
+    <TextView
+        android:id="@+id/post_txtComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="8dp"
+        android:text="Caption"
+        app:layout_constraintBottom_toBottomOf="@+id/post_txtName"
+        app:layout_constraintEnd_toEndOf="@+id/post_txtLike"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/post_txtName"
+        app:layout_constraintTop_toTopOf="@+id/post_txtName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/post_MoreComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="View more comments"
+        android:textSize="@dimen/sp12dp"
+        app:layout_constraintEnd_toEndOf="@+id/post_txtLike"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/post_txtName"
+        app:layout_constraintTop_toBottomOf="@+id/post_txtName" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/post_commentImageUser"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:paddingHorizontal="@dimen/sp3dp"
+        android:src="@drawable/coder"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="0dp"
+        app:layout_constraintStart_toStartOf="@+id/post_MoreComment"
+        app:layout_constraintTop_toBottomOf="@+id/post_MoreComment" />
+
+    <TextView
+        android:id="@+id/post_AddComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:text="Add a comment..."
+        android:textSize="@dimen/sp12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/post_commentImageUser"
+        app:layout_constraintEnd_toEndOf="@+id/post_MoreComment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/post_commentImageUser"
+        app:layout_constraintTop_toTopOf="@+id/post_commentImageUser"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/post_txtPostTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:text="Post's time"
+        android:textSize="@dimen/sp8dp"
+        app:layout_constraintEnd_toEndOf="@+id/post_AddComment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/post_commentImageUser"
+        app:layout_constraintTop_toBottomOf="@+id/post_AddComment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

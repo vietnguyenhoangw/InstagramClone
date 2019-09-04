@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:padding="4dp"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/story_ImageUser"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/khabanh"
+        android:paddingHorizontal="@dimen/sp3dp"
+        android:background="@drawable/background_story_image"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="#000"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/story_ImageUser"
+        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintStart_toStartOf="@+id/story_ImageUser"
+        app:layout_constraintTop_toBottomOf="@+id/story_ImageUser" />
+</androidx.constraintlayout.widget.ConstraintLayout>
