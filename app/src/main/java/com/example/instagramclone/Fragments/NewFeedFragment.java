@@ -41,9 +41,11 @@ public class NewFeedFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        recyclerView = view.findViewById(R.id.newFeedRecycleView);
         
         setAdapterType();
-        setAdapter();   
+        setAdapter();
     }
 
     public void initData() {
@@ -51,6 +53,8 @@ public class NewFeedFragment extends Fragment {
         postData = new ArrayList<>();
         groupData = new ArrayList<>();
 
+        storyData.add("123123123");
+        storyData.add("123123123");
         storyData.add("123123123");
         storyData.add("123123123");
         storyData.add("123123123");
@@ -73,7 +77,6 @@ public class NewFeedFragment extends Fragment {
     }
 
     private void setAdapter() {
-        recyclerView = getActivity().findViewById(R.id.newFeedRecycleView);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
     }

@@ -39,7 +39,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.VH>{
     }
 
     private void setVertical(RecyclerView recyclerView) {
-        VerticalPostAdapter verticalAdapter = new VerticalPostAdapter(context, storyData);
+        VerticalPostAdapter verticalAdapter = new VerticalPostAdapter(context, postData);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(verticalAdapter);
@@ -47,7 +47,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.VH>{
     }
 
     private void setHorizontal(RecyclerView recyclerView) {
-        HorzizontalStoryAdapter hozitalAdapter = new HorzizontalStoryAdapter(context, postData);
+        HorzizontalStoryAdapter hozitalAdapter = new HorzizontalStoryAdapter(context, storyData);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(hozitalAdapter);

@@ -42,8 +42,10 @@ public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapte
     }
 
     class VH extends RecyclerView.ViewHolder{
+
         public VH(@NonNull View itemView) {
             super(itemView);
+
         }
     }
 }
