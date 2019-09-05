@@ -5,6 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.NewFeedFragment">
 
-    <include layout="@layout/topbar_newfeed_fragment"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/topbar_newfeed_fragment"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newFeedRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
 
 </FrameLayout>
