@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.instagramclone.Objects.NewFeeds;
+import com.example.instagramclone.Objects.Newfeed;
 import com.example.instagramclone.R;
 
 import java.util.ArrayList;
@@ -17,10 +19,10 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.VH>{
 
     Context context;
     ArrayList<String> storyData;
-    ArrayList<String> postData;
+    ArrayList<Newfeed> postData;
     ArrayList<String> groupData;
 
-    public GroupAdapter(Context context, ArrayList<String> storyData, ArrayList<String> postData, ArrayList<String> groupData) {
+    public GroupAdapter(Context context, ArrayList<String> storyData, ArrayList<Newfeed> postData, ArrayList<String> groupData) {
         this.context = context;
         this.storyData = storyData;
         this.postData = postData;

@@ -24,7 +24,7 @@
         android:id="@+id/post_txtUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:text="TextView"
         android:textColor="#000"
         android:textSize="@dimen/sp13dp"
@@ -56,6 +56,9 @@
         android:id="@+id/post_Like"
         android:layout_width="43dp"
         android:layout_height="39dp"
+        app:layout_constraintBottom_toTopOf="@+id/post_txtLike"
+        app:layout_constraintEnd_toStartOf="@+id/post_comment"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post_Image"
         app:srcCompat="@drawable/like" />
 

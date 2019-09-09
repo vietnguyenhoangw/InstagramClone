@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.instagramclone.Objects.Newfeed;
 import com.example.instagramclone.R;
 
 import java.util.ArrayList;
@@ -15,9 +16,9 @@ import java.util.ArrayList;
 public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapter.VH>{
 
     Context context;
-    ArrayList<String> data;
+    ArrayList<Newfeed> data;
 
-    public VerticalPostAdapter(Context context, ArrayList<String> data) {
+    public VerticalPostAdapter(Context context, ArrayList<Newfeed> data) {
         this.context = context;
         this.data = data;
     }
