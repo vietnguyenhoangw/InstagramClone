@@ -14,8 +14,8 @@ import android.view.ViewGroup;
 
 import com.example.instagramclone.Adapter.GroupAdapter;
 import com.example.instagramclone.NewfeedService;
+import com.example.instagramclone.Objects.NewFeed;
 import com.example.instagramclone.Objects.NewFeeds;
-import com.example.instagramclone.Objects.Newfeed;
 import com.example.instagramclone.R;
 import com.example.instagramclone.RetrofitInstace;
 
@@ -23,13 +23,12 @@ import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 public class NewFeedFragment extends Fragment {
     RecyclerView recyclerView;
     GroupAdapter groupAdapter;
     ArrayList<String> storyData;
-    ArrayList<Newfeed> postData;
+    ArrayList<NewFeed> postData;
     ArrayList<String> groupData;
     LinearLayoutManager layoutManager;
 
@@ -70,15 +69,10 @@ public class NewFeedFragment extends Fragment {
 
         getNewFeedDataRetrofit();
 
-//        postData.add("a");
-//        postData.add("b");
-//        postData.add("c");
-//        postData.add("a");
-//        postData.add("b");
-//        postData.add("c");
-//        postData.add("a");
-//        postData.add("b");
-//        postData.add("c");
+        postData.add(new NewFeed("i love vinaheyyyy", "312", "3 days"
+                ,"daniel_nguyen"));
+        postData.add(new NewFeed("nothing ...", "9871", "3 weeks"
+                ,"cong_hug"));
 
         groupData.add("z");
         groupData.add("x");
@@ -107,8 +101,8 @@ public class NewFeedFragment extends Fragment {
         newFeedsCall.enqueue(new Callback<NewFeeds>() {
             @Override
             public void onResponse(Call<NewFeeds> call, retrofit2.Response<NewFeeds> response) {
-                postData.addAll(response.body().getNewfeeds());
-                groupAdapter.notifyDataSetChanged();
+//                postData.addAll(response.body().getNewfeeds());
+//                groupAdapter.notifyDataSetChanged();
             }
 
             @Override

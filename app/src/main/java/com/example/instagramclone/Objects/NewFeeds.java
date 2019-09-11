@@ -9,7 +9,7 @@ public class NewFeeds {
 
     @SerializedName("newfeeds")
     @Expose
-    private List<Newfeed> newfeeds = null;
+    private List<NewFeed> newfeeds = null;
 
     /**
      * No args constructor for use in serialization
@@ -22,20 +22,20 @@ public class NewFeeds {
      * 
      * @param newfeeds
      */
-    public NewFeeds(List<Newfeed> newfeeds) {
+    public NewFeeds(List<NewFeed> newfeeds) {
         super();
         this.newfeeds = newfeeds;
     }
 
-    public List<Newfeed> getNewfeeds() {
+    public List<NewFeed> getNewfeeds() {
         return newfeeds;
     }
 
-    public void setNewfeeds(List<Newfeed> newfeeds) {
+    public void setNewfeeds(List<NewFeed> newfeeds) {
         this.newfeeds = newfeeds;
     }
 
-    public NewFeeds withNewfeeds(List<Newfeed> newfeeds) {
+    public NewFeeds withNewfeeds(List<NewFeed> newfeeds) {
         this.newfeeds = newfeeds;
         return this;
     }

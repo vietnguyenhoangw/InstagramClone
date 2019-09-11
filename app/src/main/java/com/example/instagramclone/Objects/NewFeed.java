@@ -4,7 +4,7 @@ package com.example.instagramclone.Objects;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Newfeed {
+public class NewFeed {
 
     @SerializedName("Caption")
     @Expose
@@ -35,7 +35,7 @@ public class Newfeed {
      * No args constructor for use in serialization
      * 
      */
-    public Newfeed() {
+    public NewFeed() {
     }
 
     /**
@@ -49,7 +49,7 @@ public class Newfeed {
      * @param like
      * @param postTime
      */
-    public Newfeed(String caption, String like, String postImage, String postTime, String status, Integer userID, String userName, String userProfileImage) {
+    public NewFeed(String caption, String like, String postImage, String postTime, String status, Integer userID, String userName, String userProfileImage) {
         super();
         this.caption = caption;
         this.like = like;
@@ -61,6 +61,13 @@ public class Newfeed {
         this.userProfileImage = userProfileImage;
     }
 
+    public NewFeed(String caption, String like, String postTime, String userName) {
+        this.caption = caption;
+        this.like = like;
+        this.postTime = postTime;
+        this.userName = userName;
+    }
+
     public String getCaption() {
         return caption;
     }
@@ -69,7 +76,7 @@ public class Newfeed {
         this.caption = caption;
     }
 
-    public Newfeed withCaption(String caption) {
+    public NewFeed withCaption(String caption) {
         this.caption = caption;
         return this;
     }
@@ -82,7 +89,7 @@ public class Newfeed {
         this.like = like;
     }
 
-    public Newfeed withLike(String like) {
+    public NewFeed withLike(String like) {
         this.like = like;
         return this;
     }
@@ -95,7 +102,7 @@ public class Newfeed {
         this.postImage = postImage;
     }
 
-    public Newfeed withPostImage(String postImage) {
+    public NewFeed withPostImage(String postImage) {
         this.postImage = postImage;
         return this;
     }
@@ -108,7 +115,7 @@ public class Newfeed {
         this.postTime = postTime;
     }
 
-    public Newfeed withPostTime(String postTime) {
+    public NewFeed withPostTime(String postTime) {
         this.postTime = postTime;
         return this;
     }
@@ -121,7 +128,7 @@ public class Newfeed {
         this.status = status;
     }
 
-    public Newfeed withStatus(String status) {
+    public NewFeed withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -134,7 +141,7 @@ public class Newfeed {
         this.userID = userID;
     }
 
-    public Newfeed withUserID(Integer userID) {
+    public NewFeed withUserID(Integer userID) {
         this.userID = userID;
         return this;
     }
@@ -147,7 +154,7 @@ public class Newfeed {
         this.userName = userName;
     }
 
-    public Newfeed withUserName(String userName) {
+    public NewFeed withUserName(String userName) {
         this.userName = userName;
         return this;
     }
@@ -160,9 +167,22 @@ public class Newfeed {
         this.userProfileImage = userProfileImage;
     }
 
-    public Newfeed withUserProfileImage(String userProfileImage) {
+    public NewFeed withUserProfileImage(String userProfileImage) {
         this.userProfileImage = userProfileImage;
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "NewFeed{" +
+                "caption='" + caption + '\'' +
+                ", like='" + like + '\'' +
+                ", postImage='" + postImage + '\'' +
+                ", postTime='" + postTime + '\'' +
+                ", status='" + status + '\'' +
+                ", userID=" + userID +
+                ", userName='" + userName + '\'' +
+                ", userProfileImage='" + userProfileImage + '\'' +
+                '}';
+    }
 }
