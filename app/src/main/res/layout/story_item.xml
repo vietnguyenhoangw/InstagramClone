@@ -8,7 +8,7 @@
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/story_ImageUser"
+        android:id="@+id/post_ImageUser"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/khabanh"
@@ -28,8 +28,8 @@
         android:text="TextView"
         android:textColor="#000"
         android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/story_ImageUser"
+        app:layout_constraintEnd_toEndOf="@+id/post_ImageUser"
         app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="@+id/story_ImageUser"
-        app:layout_constraintTop_toBottomOf="@+id/story_ImageUser" />
+        app:layout_constraintStart_toStartOf="@+id/post_ImageUser"
+        app:layout_constraintTop_toBottomOf="@+id/post_ImageUser" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,15 +67,10 @@ public class NewFeedFragment extends Fragment {
         storyData.add("123123123");
         storyData.add("123123123");
 
-        getNewFeedDataRetrofit();
-
-        postData.add(new NewFeed("i love vinaheyyyy", "312", "3 days"
-                ,"daniel_nguyen"));
-        postData.add(new NewFeed("nothing ...", "9871", "3 weeks"
-                ,"cong_hug"));
-
         groupData.add("z");
         groupData.add("x");
+
+        getNewFeedDataRetrofit();
     }
 
     private void setAdapter() {
@@ -101,8 +96,8 @@ public class NewFeedFragment extends Fragment {
         newFeedsCall.enqueue(new Callback<NewFeeds>() {
             @Override
             public void onResponse(Call<NewFeeds> call, retrofit2.Response<NewFeeds> response) {
-//                postData.addAll(response.body().getNewfeeds());
-//                groupAdapter.notifyDataSetChanged();
+                postData.addAll(response.body().getNewfeeds());
+                groupAdapter.notifyDataSetChanged();
             }
 
             @Override

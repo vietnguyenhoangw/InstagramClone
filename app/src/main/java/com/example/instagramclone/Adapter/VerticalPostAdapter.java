@@ -1,9 +1,12 @@
 package com.example.instagramclone.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,7 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.instagramclone.Objects.NewFeed;
 import com.example.instagramclone.R;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapter.VH>{
@@ -37,6 +44,18 @@ public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapte
     public void onBindViewHolder(@NonNull VH holder, int position) {
         NewFeed newFeed = data.get(position);
 
+        Picasso.get()
+                .load(newFeed.getPostImage())
+                .into(holder.postImage);
+
+        Picasso.get()
+                .load(newFeed.getUserProfileImage())
+                .into(holder.userImage);
+
+        Picasso.get()
+                .load(newFeed.getUserProfileImage())
+                .into(holder.commentImageUser);
+
         holder.userName.setText(newFeed.getUserName());
         holder.like.setText(newFeed.getLike() + " Likes");
         holder.userPostName.setText(newFeed.getUserName());
@@ -52,6 +71,7 @@ public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapte
     class VH extends RecyclerView.ViewHolder{
 
         TextView userName, like, userPostName, caption, postTime;
+        ImageView postImage, userImage, commentImageUser;
 
         public VH(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +81,9 @@ public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapte
             userPostName = itemView.findViewById(R.id.post_txtName);
             caption = itemView.findViewById(R.id.post_txtCaption);
             postTime = itemView.findViewById(R.id.post_txtPostTime);
+            postImage = itemView.findViewById(R.id.post_Image);
+            userImage = itemView.findViewById(R.id.post_ImageUser);
+            commentImageUser = itemView.findViewById(R.id.post_commentImageUser);
         }
     }
 }

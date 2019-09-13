@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/story_ImageUser"
+        android:id="@+id/post_ImageUser"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_margin="8dp"
@@ -29,9 +29,9 @@
         android:textColor="#000"
         android:textSize="@dimen/sp13dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/story_ImageUser"
-        app:layout_constraintStart_toEndOf="@+id/story_ImageUser"
-        app:layout_constraintTop_toTopOf="@+id/story_ImageUser" />
+        app:layout_constraintBottom_toBottomOf="@+id/post_ImageUser"
+        app:layout_constraintStart_toEndOf="@+id/post_ImageUser"
+        app:layout_constraintTop_toTopOf="@+id/post_ImageUser" />
 
     <ImageView
         android:id="@+id/post_Option"
@@ -49,7 +49,7 @@
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:scaleType="fitStart"
-        app:layout_constraintTop_toBottomOf="@+id/story_ImageUser"
+        app:layout_constraintTop_toBottomOf="@+id/post_ImageUser"
         app:srcCompat="@drawable/coder" />
 
     <ImageView
