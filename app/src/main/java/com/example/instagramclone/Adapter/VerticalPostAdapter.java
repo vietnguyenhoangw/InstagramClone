@@ -1,8 +1,6 @@
 package com.example.instagramclone.Adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +14,6 @@ import com.example.instagramclone.Objects.NewFeed;
 import com.example.instagramclone.R;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapter.VH>{
@@ -82,7 +77,7 @@ public class VerticalPostAdapter extends RecyclerView.Adapter<VerticalPostAdapte
             caption = itemView.findViewById(R.id.post_txtCaption);
             postTime = itemView.findViewById(R.id.post_txtPostTime);
             postImage = itemView.findViewById(R.id.post_Image);
-            userImage = itemView.findViewById(R.id.post_ImageUser);
+            userImage = itemView.findViewById(R.id.story_ImageUser);
             commentImageUser = itemView.findViewById(R.id.post_commentImageUser);
         }
     }

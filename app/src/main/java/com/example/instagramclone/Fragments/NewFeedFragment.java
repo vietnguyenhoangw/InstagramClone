@@ -13,21 +13,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.instagramclone.Adapter.GroupAdapter;
-import com.example.instagramclone.NewfeedService;
+import com.example.instagramclone.Objects.Stories;
+import com.example.instagramclone.API.RetrofitService;
 import com.example.instagramclone.Objects.NewFeed;
 import com.example.instagramclone.Objects.NewFeeds;
+import com.example.instagramclone.Objects.Story;
 import com.example.instagramclone.R;
-import com.example.instagramclone.RetrofitInstace;
+import com.example.instagramclone.API.RetrofitInstace;
 
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NewFeedFragment extends Fragment {
     RecyclerView recyclerView;
     GroupAdapter groupAdapter;
-    ArrayList<String> storyData;
+    ArrayList<Story> storyData;
     ArrayList<NewFeed> postData;
     ArrayList<String> groupData;
     LinearLayoutManager layoutManager;
@@ -58,19 +61,11 @@ public class NewFeedFragment extends Fragment {
         postData = new ArrayList<>();
         groupData = new ArrayList<>();
 
-        storyData.add("123123123");
-        storyData.add("123123123");
-        storyData.add("123123123");
-        storyData.add("123123123");
-        storyData.add("123123123");
-        storyData.add("123123123");
-        storyData.add("123123123");
-        storyData.add("123123123");
-
-        groupData.add("z");
-        groupData.add("x");
+        groupData.add("stories");
+        groupData.add("posts");
 
         getNewFeedDataRetrofit();
+        getStoriesDataRetrofit();
     }
 
     private void setAdapter() {
@@ -84,14 +79,13 @@ public class NewFeedFragment extends Fragment {
 
         groupAdapter = new GroupAdapter(getContext(), storyData, postData, groupData);
         recyclerView.setAdapter(groupAdapter);
-
     }
 
     private void getNewFeedDataRetrofit() {
-        NewfeedService newfeedService = RetrofitInstace.getRetrofitInstance()
-                .create(NewfeedService.class);
+        RetrofitService retrofitService = RetrofitInstace.getRetrofitInstance()
+                .create(RetrofitService.class);
 
-        Call<NewFeeds> newFeedsCall = newfeedService.getAllNewFeed();
+        Call<NewFeeds> newFeedsCall = retrofitService.getAllNewFeed();
 
         newFeedsCall.enqueue(new Callback<NewFeeds>() {
             @Override
@@ -102,6 +96,26 @@ public class NewFeedFragment extends Fragment {
 
             @Override
             public void onFailure(Call<NewFeeds> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getStoriesDataRetrofit() {
+        RetrofitService retrofitService = RetrofitInstace.getRetrofitInstance()
+                .create(RetrofitService.class);
+
+        Call<Stories>  storiesCall = retrofitService.getAllStories();
+
+        storiesCall.enqueue(new Callback<Stories>() {
+            @Override
+            public void onResponse(Call<Stories> call, Response<Stories> response) {
+                storyData.addAll(response.body().getStories());
+                groupAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<Stories> call, Throwable t) {
 
             }
         });
