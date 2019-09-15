@@ -3,22 +3,13 @@ package com.example.instagramclone;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.instagramclone.Adapter.GroupAdapter;
 import com.example.instagramclone.Fragments.AddPostFragment;
 import com.example.instagramclone.Fragments.NewFeedFragment;
 import com.example.instagramclone.Fragments.NotificationsFragment;
 import com.example.instagramclone.Fragments.SearchFragment;
 import com.example.instagramclone.Fragments.UserFragment;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayoutNavbar;
