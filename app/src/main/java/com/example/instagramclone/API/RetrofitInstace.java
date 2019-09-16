@@ -10,7 +10,7 @@ public class RetrofitInstace {
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.1.10:5000")
+                    .baseUrl("http://192.168.1.9:5000")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

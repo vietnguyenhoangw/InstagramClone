@@ -6,8 +6,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +19,11 @@ import com.example.instagramclone.API.RetrofitInstace;
 import com.example.instagramclone.API.RetrofitService;
 import com.example.instagramclone.Adapter.CategoriesAdapter;
 import com.example.instagramclone.Adapter.GroupAdapter;
+import com.example.instagramclone.Adapter.RandomPostAdapter;
 import com.example.instagramclone.Objects.Categories;
 import com.example.instagramclone.Objects.Category;
+import com.example.instagramclone.Objects.NewFeed;
+import com.example.instagramclone.Objects.NewFeeds;
 import com.example.instagramclone.Objects.Stories;
 import com.example.instagramclone.R;
 
@@ -38,6 +43,11 @@ public class SearchFragment extends Fragment {
     ArrayList<Category> categoryData;
     LinearLayoutManager layoutManager;
 
+    RecyclerView randomPostRCV;
+    RandomPostAdapter randomPostAdapter;
+    ArrayList<NewFeed> newfeedData;
+    StaggeredGridLayoutManager randomPostLayoutManager;
+
 
     public SearchFragment() {
         // Required empty public constructor
@@ -56,6 +66,7 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.categoriesRecycleView);
+        randomPostRCV = view.findViewById(R.id.randomPostRecycleView);
 
         setAdapterType();
         setAdapter();
@@ -66,17 +77,25 @@ public class SearchFragment extends Fragment {
 
         categoriesAdapter = new CategoriesAdapter(getContext(), categoryData);
         recyclerView.setAdapter(categoriesAdapter);
+
+        randomPostAdapter = new RandomPostAdapter(getContext(), newfeedData);
+        randomPostRCV.setAdapter(randomPostAdapter);
     }
 
     private void initData() {
         categoryData = new ArrayList<>();
+        newfeedData = new ArrayList<>();
 
         getCategoriesRetrofit();
+        getRandomPostRetrofit();
     }
 
     private void setAdapterType() {
         layoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
+
+        randomPostLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        randomPostRCV.setLayoutManager(randomPostLayoutManager);
     }
 
     private void getCategoriesRetrofit() {
@@ -94,6 +113,26 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onFailure(Call<Categories> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getRandomPostRetrofit() {
+        RetrofitService retrofitService = RetrofitInstace.getRetrofitInstance()
+                .create(RetrofitService.class);
+
+        Call<NewFeeds> newFeedsCall = retrofitService.getAllNewFeed();
+
+        newFeedsCall.enqueue(new Callback<NewFeeds>() {
+            @Override
+            public void onResponse(Call<NewFeeds> call, Response<NewFeeds> response) {
+                newfeedData.addAll(response.body().getNewfeeds());
+                randomPostAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<NewFeeds> call, Throwable t) {
 
             }
         });
