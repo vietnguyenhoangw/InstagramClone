@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/topbar_newfeed_fragment"/>
+        <include layout="@layout/topbar_newfeed_fragment"
+            android:id="@+id/newfeedToolbar"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/newFeedRecycleView"

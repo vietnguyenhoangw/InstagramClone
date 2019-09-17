@@ -1,5 +1,6 @@
 package com.example.instagramclone.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,9 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.instagramclone.Adapter.GroupAdapter;
 import com.example.instagramclone.Objects.Stories;
@@ -35,6 +40,9 @@ public class NewFeedFragment extends Fragment {
     ArrayList<String> groupData;
     LinearLayoutManager layoutManager;
 
+    ImageView cammeraToolbarButton;
+    Toolbar toolBar;
+
     public NewFeedFragment() {
         // Required empty public constructor
     }
@@ -51,6 +59,17 @@ public class NewFeedFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.newFeedRecycleView);
+        cammeraToolbarButton = view.findViewById(R.id.cameraToolbar);
+
+        cammeraToolbarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                startActivity(cameraIntent);
+            }
+        });
+
         
         setAdapterType();
         setAdapter();
