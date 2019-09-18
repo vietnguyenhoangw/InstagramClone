@@ -16,4 +16,7 @@ public interface RetrofitService {
 
     @GET("/categories")
     Call<Categories> getAllCategories();
+
+    @GET("/userposts")
+    Call<NewFeeds> getAllUserListPost();
 }

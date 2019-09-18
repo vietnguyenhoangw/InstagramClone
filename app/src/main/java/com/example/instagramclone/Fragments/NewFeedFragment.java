@@ -58,8 +58,8 @@ public class NewFeedFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.newFeedRecycleView);
         cammeraToolbarButton = view.findViewById(R.id.cameraToolbar);
+        recyclerView = view.findViewById(R.id.newFeedRecycleView);
 
         cammeraToolbarButton.setOnClickListener(new View.OnClickListener() {
             @Override
