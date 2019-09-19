@@ -9,7 +9,7 @@
         android:id="@+id/SquareGridItemImage"
         android:layout_width="137dp"
         android:layout_height="137dp"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_launcher_background" />
 
 </LinearLayout>

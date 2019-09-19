@@ -75,10 +75,12 @@ public class UserFragment extends Fragment {
         userGridPostRecyclerView = view.findViewById(R.id.recycleViewUserGridPost);
 
         tabLayoutUser.addTab(tabLayoutUser.newTab().setIcon(R.drawable.baseline_grid_on_black_48));
-        tabLayoutUser.addTab(tabLayoutUser.newTab().setIcon(R.drawable.baseline_assignment_ind_black_48));
+        tabLayoutUser.addTab(tabLayoutUser.newTab().setIcon(R.drawable.ic_menu_black_24dp));
 
         setAdapterType();
         setAdapter();
+
+        list.setVisibility(View.GONE);
 
         tabLayoutUser.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
