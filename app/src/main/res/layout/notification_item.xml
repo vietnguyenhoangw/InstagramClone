@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/story_ImageUser"
+            android:id="@+id/notification_profileImage"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
@@ -29,7 +29,7 @@
 
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/notification_userName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -40,16 +40,38 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/notification_userName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="UserName"
+                android:textColor="#0A0A0A"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/notification_finalComment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="commented:"
-                app:layout_constraintStart_toEndOf="@+id/textView14"
-                app:layout_constraintTop_toTopOf="@+id/textView14" />
+                app:layout_constraintBottom_toBottomOf="@+id/notification_userName1"
+                app:layout_constraintStart_toEndOf="@+id/notification_userName1"
+                app:layout_constraintTop_toTopOf="@+id/notification_userName1" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/notification_finalLikePost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="like your post."
+                app:layout_constraintBottom_toBottomOf="@+id/notification_userName2"
+                app:layout_constraintStart_toEndOf="@+id/notification_userName2"
+                app:layout_constraintTop_toTopOf="@+id/notification_userName2" />
+
+            <TextView
+                android:id="@+id/notification_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -61,17 +83,15 @@
                 android:text="xin chao cac ban ten minh la nguyen hoang viet minh dang ngoi hehehehehe voi huynh cong hung"
                 android:textAlignment="viewStart"
                 android:textSize="12sp"
-                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView14"
-                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                app:layout_constraintStart_toStartOf="@+id/notification_userName1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:layout_margin="5dp"
             android:padding="5dp"
-            android:id="@+id/imageView"
+            android:id="@+id/notification_postImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
             app:srcCompat="@drawable/ic_launcher_background" />
