@@ -1,6 +1,8 @@
 
 package com.example.instagramclone.Objects;
 
+import android.graphics.drawable.Drawable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -33,9 +35,10 @@ public class NewFeed {
 
     /**
      * No args constructor for use in serialization
-     * 
+     *
+     * @param drawable
      */
-    public NewFeed() {
+    public NewFeed(Drawable drawable) {
     }
 
     /**
@@ -66,6 +69,10 @@ public class NewFeed {
         this.like = like;
         this.postTime = postTime;
         this.userName = userName;
+    }
+
+    public NewFeed(String postImage) {
+        this.postImage = postImage;
     }
 
     public String getCaption() {

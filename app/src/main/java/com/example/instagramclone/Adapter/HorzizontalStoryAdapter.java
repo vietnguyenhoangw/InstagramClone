@@ -60,7 +60,7 @@ public class HorzizontalStoryAdapter extends RecyclerView.Adapter<HorzizontalSto
         public VH(@NonNull View itemView) {
             super(itemView);
 
-            userProfileImage = itemView.findViewById(R.id.notification_profileImage);
+            userProfileImage = itemView.findViewById(R.id.profileImage);
             userName = itemView.findViewById(R.id.story_txtUserName);
         }
     }

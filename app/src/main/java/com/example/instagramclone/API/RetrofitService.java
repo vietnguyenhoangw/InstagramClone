@@ -2,6 +2,7 @@ package com.example.instagramclone.API;
 
 import com.example.instagramclone.Objects.Categories;
 import com.example.instagramclone.Objects.NewFeeds;
+import com.example.instagramclone.Objects.Notifications;
 import com.example.instagramclone.Objects.Stories;
 
 import retrofit2.Call;
@@ -19,4 +20,7 @@ public interface RetrofitService {
 
     @GET("/userposts")
     Call<NewFeeds> getAllUserListPost();
+
+    @GET("/notifications")
+    Call<Notifications> getAllNotification();
 }

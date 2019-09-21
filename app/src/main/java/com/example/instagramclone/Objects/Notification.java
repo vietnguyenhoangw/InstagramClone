@@ -8,25 +8,37 @@ public class Notification {
 
     @SerializedName("Content")
     @Expose
-    private Object content;
+    private String content;
     @SerializedName("Status")
     @Expose
     private String status;
     @SerializedName("UserName")
     @Expose
     private String userName;
+    @SerializedName("userProfileImage")
+    @Expose
+    private String userProfileImage;
 
-    public Object getContent() {
-        return content;
-    }
-
-    public Notification(Object content, String status, String userName) {
+    public Notification(String content, String status, String userName, String userProfileImage) {
         this.content = content;
         this.status = status;
         this.userName = userName;
+        this.userProfileImage = userProfileImage;
     }
 
-    public void setContent(Object content) {
+    public String getUserProfileImage() {
+        return userProfileImage;
+    }
+
+    public void setUserProfileImage(String userProfileImage) {
+        this.userProfileImage = userProfileImage;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
         this.content = content;
     }
 

@@ -77,7 +77,7 @@ public class UserListPostAdapter extends RecyclerView.Adapter<UserListPostAdapte
             caption = itemView.findViewById(R.id.post_txtCaption);
             postTime = itemView.findViewById(R.id.post_txtPostTime);
             postImage = itemView.findViewById(R.id.post_Image);
-            userImage = itemView.findViewById(R.id.notification_profileImage);
+            userImage = itemView.findViewById(R.id.profileImage);
             commentImageUser = itemView.findViewById(R.id.post_commentImageUser);
         }
     }
